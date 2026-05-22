@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+
+  <title>MEMOTIX - RECEIPT PHOTOBOOTH</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<body>
+
+  <!-- OPENING SCREEN -->
+  <section id="opening-screen" class="screen active">
+    <div class="floating-stickers"></div>
+
+    <div class="opening-content animate__animated animate__fadeIn">
+      <img src="assets/logos/logo.png" class="logo" />
+
+      <h1>MEMOTIX</h1>
+      <p>RECEIPT PHOTOBOOTH</p>
+
+      <button id="startBtn">START</button>
+    </div>
+  </section>
+
+  <!-- FRAME SELECT -->
+  <section id="frame-screen" class="screen">
+    <h2>Select Your Frame</h2>
+
+    <div class="frame-carousel">
+
+      <div class="frame-card">
+        <img src="templates/4cut/preview.png" />
+        <span>4 CUT</span>
+      </div>
+
+      <div class="frame-card">
+        <img src="templates/polaroid/preview.png" />
+        <span>POLAROID</span>
+      </div>
+
+      <div class="frame-card">
+        <img src="templates/receipt/preview.png" />
+        <span>RECEIPT</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAMERA SCREEN -->
+  <section id="camera-screen" class="screen">
+    <video id="camera" autoplay playsinline></video>
+
+    <div id="countdown">3</div>
+
+    <div class="camera-ui">
+      <button id="captureBtn">CAPTURE</button>
+    </div>
+  </section>
+
+  <!-- EDIT SCREEN -->
+  <section id="edit-screen" class="screen">
+    <canvas id="editorCanvas"></canvas>
+
+    <div class="edit-tools">
+      <button id="addSticker">Sticker</button>
+      <button id="filterBtn">Filter</button>
+      <button id="retakeBtn">Retake</button>
+      <button id="saveBtn">Save</button>
+    </div>
+  </section>
+
+  <!-- FINAL RESULT -->
+  <section id="result-screen" class="screen">
+
+    <div class="receipt-wrapper">
+      <div id="receipt-strip">
+
+        <div class="receipt-header">
+          MEMOTIX PHOTOBOOTH
+        </div>
+
+        <div class="photo-strip"></div>
+
+        <div class="receipt-footer">
+          <div class="barcode"></div>
+
+          <p class="timestamp"></p>
+
+          <p class="watermark">
+            THANK YOU FOR MAKING MEMORIES
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <button id="downloadQRBtn">
+      GET QR
+    </button>
+
+  </section>
+
+  <!-- QR SCREEN -->
+  <section id="qr-screen" class="screen">
+
+    <div class="qr-card">
+      <h2>SCAN TO DOWNLOAD</h2>
+
+      <canvas id="qrCanvas"></canvas>
+
+      <button id="downloadBtn">
+        DOWNLOAD
+      </button>
+    </div>
+
+  </section>
+
+  <audio
+    id="bgm"
+    src="assets/audio/ambience.mp3"
+    loop
+  ></audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
