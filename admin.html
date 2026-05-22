@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>MEMOTIX ADMIN</title>
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body>
+
+<div id="loginPage">
+
+  <div class="login-card">
+
+    <h1>MEMOTIX ADMIN</h1>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Password"
+    />
+
+    <button id="loginBtn">
+      LOGIN
+    </button>
+
+  </div>
+
+</div>
+
+<div id="adminPanel">
+
+  <aside class="sidebar">
+
+    <h2>SETTINGS</h2>
+
+    <button data-tab="cover">
+      COVER
+    </button>
+
+    <button data-tab="template">
+      TEMPLATE
+    </button>
+
+    <button data-tab="sticker">
+      STICKER
+    </button>
+
+    <button data-tab="filter">
+      FILTER
+    </button>
+
+    <button data-tab="text">
+      TEXT
+    </button>
+
+    <button data-tab="qr">
+      QR
+    </button>
+
+  </aside>
+
+  <main class="admin-content">
+
+    <!-- COVER -->
+    <section id="cover" class="admin-tab active">
+
+      <h2>Cover Customization</h2>
+
+      <input type="file" />
+      <input type="text" placeholder="Subtitle" />
+
+      <label>Theme Color</label>
+      <input type="color" />
+
+    </section>
+
+    <!-- TEMPLATE -->
+    <section id="template" class="admin-tab">
+
+      <h2>Template Manager</h2>
+
+      <input type="file" />
+
+      <button>Add Template</button>
+
+      <div class="template-preview"></div>
+
+    </section>
+
+    <!-- STICKER -->
+    <section id="sticker" class="admin-tab">
+
+      <h2>Sticker Editor</h2>
+
+      <input type="file" multiple />
+
+      <div class="sticker-grid"></div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
