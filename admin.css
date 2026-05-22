@@ -1,0 +1,38 @@
+body{
+  margin:0;
+  background:#fff5e7;
+  font-family:Arial;
+}
+
+#adminPanel{
+  display:flex;
+  height:100vh;
+}
+
+.sidebar{
+  width:260px;
+  background:#ffb36a;
+  padding:30px;
+}
+
+.sidebar button{
+  width:100%;
+  margin-bottom:14px;
+  padding:16px;
+  border:none;
+  border-radius:16px;
+}
+
+.admin-content{
+  flex:1;
+  padding:40px;
+  overflow:auto;
+}
+
+.admin-tab{
+  display:none;
+}
+
+.admin-tab.active{
+  display:block;
+}
